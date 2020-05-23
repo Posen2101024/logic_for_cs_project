@@ -21,9 +21,9 @@
 
 - [ ] `fin_pairs.csv` 資料前處理
 
-	- 以 python 整理解析內容
+	- [x] 以 `dataset_parser.py` 解析其內容
 
-	- 輸出成 prolog 的 knowledge bases
+	- [ ] 輸出成 prolog 的 knowledge bases
 
 - [ ] 設計 QUERY
 
