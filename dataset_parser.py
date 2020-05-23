@@ -1,8 +1,22 @@
 """
-Input file: dataset
-Ouput file: parsing
 
-Ouput format: '{sentence}	{exists}' for each line
+Input file:
+	dataset
+
+Ouput file:
+	parsing
+
+Ouput form:
+
+	'Whole sentence'
+	'Parsed pairs'
+	'Cause of the whole sentence'
+	'Parsed pairs'
+	'Effect of the whole sentence'
+	'Parsed pairs'
+
+	with sep = \t for each line
+
 """
 
 import numpy as np
@@ -16,14 +30,22 @@ def main(dataset, parsing):
 
 			items = df.values.reshape((-1, ))
 
+			write = []
+
 			for i in range(3):
 
 				sentence = str(items[i * 2]).strip()
-				exists   = str(items[i * 2 + 1]).strip()
+				sentence = sentence[len('{"sentence":"'):-len('"}')]
 
-				print("\n{}\n{}".format(sentence, exists))
+				exists = str(items[i * 2 + 1]).strip()
+				exists = " ".join(exists.split()[1:])
 
-				f.write("{}\t{}\n".format(sentence, exists))
+				write.append(sentence)
+				write.append(exists)
+
+				print("\n\n{}\n\n{}".format(sentence, exists))
+
+			f.write("{}\n".format("\t".join(write)))
 
 if __name__ == "__main__": 
 
