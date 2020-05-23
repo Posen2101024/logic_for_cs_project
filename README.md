@@ -28,3 +28,11 @@
 - [ ] 設計 QUERY
 
 - [ ] 簡報製作
+
+## Problems
+
+- `fin_pairs.csv` 原始檔出現 UnicodeDecodeError
+
+	```
+	UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 53-54: invalid continuation byte
+	```
