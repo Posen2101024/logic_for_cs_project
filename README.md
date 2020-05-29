@@ -36,3 +36,33 @@
 	```
 	UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 53-54: invalid continuation byte
 	```
+- how to define predicates?   
+	> input sentence:   
+	>> whole sentence: “An apple a day, keeps a doctor away.”   
+		    ** cause: ”An apple a day”  
+		    ** effect: ”keeps a doctor away”
+
+	> output of parsed pairs:
+	>>whole sentence: exist apple exist day exist doctor exist (away,keeps) and exist (keeps,apple) and exist (keeps,doctor) and exist (apple,day)  
+		    ** cause: exist apple exist day exist (apple,day)  
+		    ** effect: exist doctor exist (away,keep) and exist (keep,doctor) 
+		    
+	> So we might get the relation (keeps,apple) => apple is the reason that makes you keep away doctor  
+    
+
+    ```
+    (away,keeps) (keeps,apple) (keeps,doctor) (apple,day)
+	- atomic sentences:keeps(apple).
+			   keeps(doctor). 
+		 	   day(apple).
+	- relation(effect) :- relation(cause).  
+		condition sentence: away(X,Y) :- day(X), keeps(X), keeps(Y), \+ X=Y. 
+		query: ?- away(X,Y).
+			X=apple
+			Y=doctor
+    ```
+
+
+
+	
+  
