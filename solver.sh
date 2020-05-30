@@ -1,5 +1,5 @@
 
-if [ "$#" == "0" ]; then
+if [ ${#} -eq 0 ]; then
 	model="example"
 else
 	model="${1}"
