@@ -16,10 +16,12 @@ while read line; do
 
 		echo "${line}\nhalt." > ".command.tmp"
 
-		swipl "${rules}" < ".command.tmp"
+		swipl --quiet "${rules}" < ".command.tmp"
 
 		rm -f ".command.tmp"
 
 	fi
 
 done < "${query}" > solutions.out
+
+cat solutions.out
