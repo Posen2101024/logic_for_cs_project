@@ -30,6 +30,9 @@
 - [x] 建立 Prolog 執行環境 `solver.sh`
 
 - [ ] 簡報製作
+	- [x] 題目：
+	- [ ] 想法：
+	- [ ] 成果(截圖)
 
 ## Quick Start
 
