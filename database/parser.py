@@ -1,24 +1,5 @@
-"""
 
-Input file:
-	dataset
-
-Ouput file:
-	parsing
-
-Ouput form:
-
-	'Whole sentence'
-	'Parsed pairs'
-	'Cause of the whole sentence'
-	'Parsed pairs'
-	'Effect of the whole sentence'
-	'Parsed pairs'
-
-	with sep = \t for each line
-
-"""
-
+import nltk
 import numpy as np
 import pandas as pd
 
@@ -30,27 +11,17 @@ def main(dataset, parsing):
 
 			items = df.values.reshape((-1, ))
 
-			write = []
+			text = str(items[0]).strip()
+			text = text[len('{"sentence":"'):-len('"}')]
 
-			for i in range(3):
+			sents = nltk.sent_tokenize(text)
 
-				sentence = str(items[i * 2]).strip()
-				sentence = sentence[len('{"sentence":"'):-len('"}')]
-
-				exists = str(items[i * 2 + 1]).strip()
-				exists = " ".join(exists.split()[1:])
-
-				write.append(sentence)
-				write.append(exists)
-
-				print("\n\n{}\n\n{}".format(sentence, exists))
-
-			f.write("{}\n".format("\t".join(write)))
+			f.write("{}\n".format("\n".join(sents)))
 
 if __name__ == "__main__": 
 
 	dataset = "final_project/fin_pairs.csv"
 
-	parsing = "data.csv"
+	parsing = "data.txt"
 
 	main(dataset, parsing)
