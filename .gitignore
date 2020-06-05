@@ -12,3 +12,7 @@ __pycache__/
 # Logs
 *.out
 *.tmp
+
+# CoreNLP
+*.zip*
+corenlp/stanford-corenlp-4.0.0/
