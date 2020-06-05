@@ -49,8 +49,8 @@ def main(dataset, parsing):
 
 if __name__ == "__main__": 
 
-	dataset = "database/final_project/fin_pairs.csv"
+	dataset = "final_project/fin_pairs.csv"
 
-	parsing = "database/data.csv"
+	parsing = "data.csv"
 
 	main(dataset, parsing)
