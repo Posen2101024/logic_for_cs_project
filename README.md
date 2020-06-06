@@ -30,13 +30,16 @@
 - [x] 建立 Prolog 執行環境 `solver.sh`
 
 - [ ] 簡報製作：https://docs.google.com/presentation/d/1lPDd5YgtAqvTpv7QeoPBkyvrPxj-9xQpW7T8TkEy4fM/edit?usp=sharing
+
 	- [x] 題目：
+
 	- [ ] 想法：
+
 	- [ ] 成果(截圖)
 
 ## Quick Start
 
-***Run*** `sh solver.sh example`
+***Run*** `sh prolog/solver.sh example goal1`
 
 ## Problems
 

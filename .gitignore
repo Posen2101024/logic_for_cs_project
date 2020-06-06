@@ -9,10 +9,6 @@ __pycache__/
 # Mac/OSX
 .DS_Store
 
-# Logs
-*.out
-*.tmp
-
 # CoreNLP
 *.zip*
 corenlp/stanford-corenlp-4.0.0/
