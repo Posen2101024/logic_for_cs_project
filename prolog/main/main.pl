@@ -1,2 +1,5 @@
-:- include("ner.pl").
-:- include("query.pl").
+:- include("rules.pl").
+:- include("time.pl").
+:- include("sent.pl").
+
+:- include("goal.pl").
