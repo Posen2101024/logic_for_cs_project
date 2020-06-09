@@ -47,7 +47,7 @@ def get_date(data):
                     Y = list[2]
                     #print ('Y:', Y)
                     date = Y + dash + M + dash + D
-                    print (date)
+                    print (i + 1, date)
                 elif re.search(p2, date):
                     #print ('P2')
                     list = re.split(' ', date)
@@ -61,14 +61,14 @@ def get_date(data):
                         Y = list[2]
                         #print ('Y:', Y)
                         date = Y + dash + M + dash + D
-                        print (date)
+                        print (i + 1, date)
                     else:
                         M = Month(list[1])
                         #print ('M:', M)
                         Y = list[2]
                         #print ('Y:', Y)
                         date = Y + dash + M + dash + complement
-                        print (date)
+                        print (i + 1, date)
                 elif re.search(p3, date):
                     #print ('P3')
                     list = re.split('/', date)
@@ -89,24 +89,17 @@ def get_date(data):
                     Y = list[2]
                     #print ('Y:', Y)
                     date = Y + dash + M + dash + D
-                    print (date)
+                    print (i + 1, date)
                 elif re.search(p4, date):
                     #print ('P4')
                     list = re.split('-', date)
                     Y1 = list[0]
                     Y2 = list[1]
                     date = Y1 + dash + complement + dash + complement + dash + Y2 + dash + complement + dash + complement
-                    print (date)
+                    print (i + 1, date)
                 elif re.search(p5, date):
                     date = (date + dash + complement + dash + complement)
                     date = re.sub('.* ', '', date)
-                    print (date)
+                    print (i + 1, date)
 
-if __name__ == "__main__": 
-        
-    if len(sys.argv) != 2:
-        print ('usage:',sys.argv[0],'[filename]')
-        sys.exit()
-
-    data = sys.argv[1]
-    get_date(data)
+if __name__ == "__main__": get_date("data.txt")
