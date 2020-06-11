@@ -1,5 +1,5 @@
 :- include("rules.pl").
-:- include("time.pl").
-:- include("sent.pl").
+:- include("word.pl").
+:- include("year.pl").
 
 :- include("goal.pl").

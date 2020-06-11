@@ -19,58 +19,30 @@
 
 ## Checklist
 
-- [ ] `fin_pairs.csv` 資料前處理
-
-	- [x] 以 `database/parser.py` 解析其內容
-
-	- [ ] 輸出成 prolog 的 knowledge bases
-
-	- [ ] 設計 query
-
 - [x] 建立 Prolog 執行環境 `solver.sh`
+
+	***Run*** `sh prolog/solver.sh example goal1`
+
+- [x] `fin_pairs.csv` 資料前處理
+
+	- [x] `database/data.py` 斷句
+
+	- [x] `database/date.py` 解析年代
+
+	- [x] 輸出成 prolog 的 knowledge bases
+
+	- [x] 設計 query
 
 - [ ] 簡報製作：https://docs.google.com/presentation/d/1lPDd5YgtAqvTpv7QeoPBkyvrPxj-9xQpW7T8TkEy4fM/edit?usp=sharing
 
-	- [x] 題目：
+	- [ ] 主題（Title）：
 
-	- [ ] 想法：
+	- [ ] 動機（Motivation）：
 
-	- [ ] 成果(截圖)
+	- [ ] 方法（Method）：
+
+	- [ ] 成果（Result）：
 
 ## Quick Start
 
-***Run*** `sh prolog/solver.sh example goal1`
-
-## Problems
-
-- `fin_pairs.csv` 原始檔出現 UnicodeDecodeError
-
-	```
-	UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 53-54: invalid continuation byte
-	```
-
-- how to define predicates?
-
-	> input sentence:
-	>> whole sentence: “An apple a day, keeps a doctor away.”
-		    ** cause: ”An apple a day”
-		    ** effect: ”keeps a doctor away”
-
-	> output of parsed pairs:
-	>> whole sentence: exist apple exist day exist doctor exist (away,keeps) and exist (keeps,apple) and exist (keeps,doctor) and exist (apple,day)
-		    ** cause: exist apple exist day exist (apple,day)
-		    ** effect: exist doctor exist (away,keep) and exist (keep,doctor)
-
-	> So we might get the relation (keeps,apple) => apple is the reason that makes you keep away doctor
-
-    ```
-    (away,keeps) (keeps,apple) (keeps,doctor) (apple,day)
-	- atomic sentences:keeps(apple).
-			   keeps(doctor).
-		 	   day(apple).
-	- relation(effect) :- relation(cause).
-		condition sentence: away(X,Y) :- day(X), keeps(X), keeps(Y), \+ X=Y.
-		query: ?- away(X,Y).
-			X=apple
-			Y=doctor
-    ```
+***Run*** `sh prolog/solver.sh main goal`
