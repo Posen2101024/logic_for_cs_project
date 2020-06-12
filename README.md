@@ -21,17 +21,15 @@
 
 - [x] 建立 Prolog 執行環境 `prolog/solver.sh`
 
-- [x] `fin_pairs.csv` 資料前處理
+- [x] `database/data.py` 斷句
 
-	- [x] `database/data.py` 斷句
+- [x] `database/date.py` 解析年代
 
-	- [x] `database/date.py` 解析年代
+- [x] `word.py` `year.py` 輸出成 prolog 的 knowledge bases
 
-	- [x] `word.py` `year.py` 輸出成 prolog 的 knowledge bases
+- [x] `goal.py` 定義問題
 
-	- [x] `goal.py` 定義問題
-
-- [x] 簡報製作：https://docs.google.com/presentation/d/1lPDd5YgtAqvTpv7QeoPBkyvrPxj-9xQpW7T8TkEy4fM/edit?usp=sharing
+- [x] 簡報：https://docs.google.com/presentation/d/1lPDd5YgtAqvTpv7QeoPBkyvrPxj-9xQpW7T8TkEy4fM/edit?usp=sharing
 
 ## Quick Start
 
