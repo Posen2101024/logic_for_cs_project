@@ -3,7 +3,6 @@ from stanfordcorenlp import StanfordCoreNLP
 
 import os
 import gdown
-import zipfile
 
 root = os.path.dirname(__file__)
 root = root if root else "."
@@ -24,9 +23,7 @@ class CoreNLP():
 
 			gdown.download(url, out, quiet = False)
 
-			with zipfile.ZipFile(out, "r") as data:
-
-				data.extractall(root)
+			gdown.extractall(out)
 
 			os.remove(out)
 
