@@ -19,9 +19,7 @@
 
 ## Checklist
 
-- [x] 建立 Prolog 執行環境 `solver.sh`
-
-	***Run*** `sh prolog/solver.sh example goal1`
+- [x] 建立 Prolog 執行環境 `prolog/solver.sh`
 
 - [x] `fin_pairs.csv` 資料前處理
 
@@ -29,20 +27,32 @@
 
 	- [x] `database/date.py` 解析年代
 
-	- [x] 輸出成 prolog 的 knowledge bases
+	- [x] `word.py` `year.py` 輸出成 prolog 的 knowledge bases
 
-	- [x] 設計 query
+	- [x] `goal.py` 定義問題
 
-- [ ] 簡報製作：https://docs.google.com/presentation/d/1lPDd5YgtAqvTpv7QeoPBkyvrPxj-9xQpW7T8TkEy4fM/edit?usp=sharing
-
-	- [ ] 主題（Title）：
-
-	- [ ] 動機（Motivation）：
-
-	- [ ] 方法（Method）：
-
-	- [ ] 成果（Result）：
+- [x] 簡報製作：https://docs.google.com/presentation/d/1lPDd5YgtAqvTpv7QeoPBkyvrPxj-9xQpW7T8TkEy4fM/edit?usp=sharing
 
 ## Quick Start
 
+***Run*** `sh prolog/solver.sh example goal1`
+
+***Run*** `sh prolog/solver.sh example goal2`
+
+***Run*** `sh prolog/solver.sh example goal3`
+
 ***Run*** `sh prolog/solver.sh main goal`
+
+## Using Prolog
+
+- **step1**:
+
+	***Run*** `pip3 install -r requirements.txt`
+
+- **step2**:
+
+	Write input sentence in `input.txt`
+
+- **step3**:
+
+	***Run*** `sh main.sh`
