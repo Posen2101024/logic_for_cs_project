@@ -45,12 +45,16 @@
 
 - **step1**:
 
-	***Run*** `pip3 install -r requirements.txt`
+	Install SWI-Prolog version 8.0.3
 
 - **step2**:
 
-	Write input sentence in `input.txt`
+	***Run*** `pip3 install -r requirements.txt`
 
 - **step3**:
+
+	Write input sentence in `input.txt`
+
+- **step4**:
 
 	***Run*** `sh main.sh`
